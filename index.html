@@ -11,13 +11,13 @@
 
 <body>
   <nav class="r-sidebar">
-    <label class="hamburger-menu" for="id-hamburger-checkbox">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-    </label>
     <input type="checkbox" class="hamburger-checkbox" id="id-hamburger-checkbox"
       aria-label="abrir e fechar menu lateral">
+    <label class="r-hamburger-menu" for="id-hamburger-checkbox" tabindex="1">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </label>
     <ul class="navlink-list">
       <li><a href="#home" class="navlink">Início</a></li>
       <li><a href="#sobre" class="navlink">Sobre mim</a></li>
@@ -33,8 +33,26 @@
         <a href="#projetos" class="button-cta">Projetos</a>
       </div>
     </header>
-    <section class="r-sobre">
-
+    <section id='sobre' class="r-sobre" aria-labelledby="r-sobre-title">
+      <img src="/assets/john-smith.png" alt="John Smith" class="image">
+      <div class="content">
+        <h2 class="section-title" id="r-sobre-title">Sobre mim</h2>
+        <div class="text">
+          <p class='section-paragraph'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna ipsum leo non
+            mollis massa. Vulputate tortor et dui pulvinar egestas. Feugiat facilisi purus
+            ligula
+            elementum enim donec. Sit maecenas faucibus augue sed amet, congue id
+            imperdiet eget.
+          </p>
+          <p  class='section-paragraph'>Vivamus amet, egestas facilisis viverra pulvinar morbi et massa elit. Enim,
+            pretium
+            porttitor non posuere turpis dictum quam. Magna neque vitae donec aliquet
+            enim.
+            Egestas
+            sed neque morbi bibendum mollis tincidunt sed tempus, massa.
+          </p>
+        </div>
+      </div>
     </section>
   </main>
 </body>

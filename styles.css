@@ -53,6 +53,24 @@ ul, ol {
   color: var(--white);
 }
 
+.section-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  color: var(--white);
+  margin-bottom: 32px;
+}
+
+.section-paragraph {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;  
+  color: var(--light-gray);
+}
+
+.section-paragraph:not(:first-of-type){
+  margin-top: 16px;
+}
 
 /*Components*/
 .button-cta {
@@ -73,14 +91,6 @@ ul, ol {
   color: unset;
 }
 
-.r-sidebar .hamburger-checkbox {
-  position: fixed;
-  z-index: 999;
-  top: 24px;
-  right: 24px;
-}
-
-
 .navlink-list {
   position: fixed;
   top: 0;
@@ -93,19 +103,76 @@ ul, ol {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 120px;
+  padding-top: 140px;
   gap: 36px;
   z-index: 998;
   transition: 0.25s; 
 }
 
-.navlink{
+.navlink {
   color: var(--black);
   font-size: 18px;
 }
 
 .r-sidebar .hamburger-checkbox:checked ~ .navlink-list {
   left: calc(100vw - min(320px, 90%));
+}
+
+.r-sidebar .hamburger-checkbox {
+  position: fixed;
+  appearance: none;
+  width: 0;
+  height: 0;
+}
+
+.r-hamburger-menu{
+  position: fixed;
+  z-index: 999;
+  width: 30px;
+  height: 20px;
+  top: 24px;
+  right: 24px; 
+  cursor: pointer;
+}
+
+.r-hamburger-menu .line{
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 0;
+  border: 1px solid var(--white);
+  transition: 0.25s;
+}
+
+.r-hamburger-menu .line:nth-of-type(1){
+  top: 0;
+  transform: rotate(0);  
+}
+
+.r-hamburger-menu .line:nth-of-type(2){
+  top: 10px;
+  transform: rotate(0);
+}
+
+.r-hamburger-menu .line:nth-of-type(3){
+  top: 20px;
+  transform: rotate(0);
+}
+
+.hamburger-checkbox:checked ~ .r-hamburger-menu .line:nth-of-type(1){
+  top: 10px;
+  transform: rotate(45deg);
+  border-color: var(--black);
+}
+
+.hamburger-checkbox:checked ~ .r-hamburger-menu .line:nth-of-type(2){
+  opacity: 0;
+}
+
+.hamburger-checkbox:checked ~ .r-hamburger-menu .line:nth-of-type(3){
+  top: 10px;
+  transform: rotate(-45deg);
+  border-color: var(--black);
 }
 
 /*Sections*/
@@ -131,7 +198,7 @@ ul, ol {
   top: 0;
   z-index: 1;
   background-color: white;
-  animation: slide 5s  
+  animation: slide 2s  
 }
 
 @keyframes slide{
@@ -154,5 +221,18 @@ ul, ol {
   gap: 24px;
   margin-top: 80px;
 }
+
+
+.r-sobre {
+  padding-top: 140px;
+  margin-inline: auto;
+  width: min(90%, 1160px);
+  display: flex;
+  justify-content: space-between;
+  gap: 100px; 
+  align-items: center;
+}
+
+
 
 
