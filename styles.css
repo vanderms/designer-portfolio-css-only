@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --background: #222;
+  --light-gray: #ccc;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+
+/*Typography*/
+.headline {  
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 58px;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.subheadline {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--white);
+}
+
+
+/*Components*/
+.button-cta {
+  width: 225px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--white);
+  border-radius: 8px;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.button-cta:hover{
+  border-color: unset;
+  background-color: var(--white);
+  color: unset;
+}
+
+.r-sidebar .hamburger-checkbox {
+  position: fixed;
+  z-index: 999;
+  top: 24px;
+  right: 24px;
+}
+
+
+.navlink-list {
+  position: fixed;
+  top: 0;
+  width: min(320px, 90%);
+  height: 100vh;
+  left: 100vw;
+  background-color: var(--white);
+  box-shadow: -1px 0px 4px 2px rgba(0,0,0,0.2); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 120px;
+  gap: 36px;
+  z-index: 998;
+  transition: 0.25s; 
+}
+
+.navlink{
+  color: var(--black);
+  font-size: 18px;
+}
+
+.r-sidebar .hamburger-checkbox:checked ~ .navlink-list {
+  left: calc(100vw - min(320px, 90%));
+}
+
+/*Sections*/
+.r-header {
+  position: relative;
+  width: 100%;  
+  height: max(100vh, 600px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;   
+  background: linear-gradient(107.04deg, #000000 -107.08%, rgba(0, 0, 0, 0.730288) 6.05%, rgba(0, 0, 0, 0.5) 102.65%);
+  overflow: hidden;
+}
+
+.r-header::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;   
+  left: 100vw;
+  top: 0;
+  z-index: 1;
+  background-color: white;
+  animation: slide 5s  
+}
+
+@keyframes slide{
+  from{ left: 0; }
+  to { left: 100vw; }
+}
+
+.r-header .headline, .r-header .subheadline, .r-header .cta-container {
+  position: relative;
+  mix-blend-mode: difference;
+  z-index: 2; 
+}
+
+.r-header .subheadline{
+  margin-top: 24px;
+}
+
+.r-header .cta-container{
+  display: flex;
+  gap: 24px;
+  margin-top: 80px;
+}
+
+
